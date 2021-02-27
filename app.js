@@ -11,7 +11,7 @@ app.get('/*', async (req, res) => {
     if ("app" in query) {
         var app = query["app"];
     } else {
-        res.redirect("https://github.com/therealsujitk/vercel-badge/blob/master/README.md");
+        res.status(200).redirect("https://github.com/therealsujitk/vercel-badge/blob/master/README.md");
         return;
     }
 

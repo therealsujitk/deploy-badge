@@ -17,7 +17,7 @@ For the application [`http://therealsujitk.vercel.app`](http://therealsujitk.ver
 ### Markdown
 
 ```markdown
-![Heroku](https://therealsujitk-vercel-badge.vercel.app/?app={VERCEL_APP_NAME})
+![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app={VERCEL_APP_NAME})
 ```
 
 ### Other Parameters

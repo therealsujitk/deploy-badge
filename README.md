@@ -1,0 +1,39 @@
+# Vercel Badge
+
+![Vercel](http://vercel-badge.vercel.app/?app=vercel-badge) ![License](https://img.shields.io/badge/license-MIT-blue)
+
+Include a [Vercel](http://vercel.com) deployment badge in your `README.md` file.
+
+## Usage
+
+For the application [`http://therealsujitk.vercel.app`](http://therealsujitk.vercel.app), the `{VERCEL_APP_NAME}` is `therealsujitk`.
+
+### HTML
+
+```html
+<img src="https://vercel-badge.vercel.app/?app={VERCEL_APP_NAME}" />
+```
+
+### Markdown
+
+```markdown
+![Heroku](https://vercel-badge.vercel.app/?app={VERCEL_APP_NAME})
+```
+
+### Other Parameters
+
+- **`?style=`** - The style of the badge. Available styles: **`flat`** (Default), **`flat-square`** & **`plastic`**.
+- **`?root=`** - Use this paramater if you'd like to check the deployment of a different path. Example: To check the deployment of [`http://therealsujitk.vercel.app/projects/vercel-badge`](http://therealsujitk.vercel.app/projects/vercel-badge), specify root as `projects/vercel-badge`.
+
+To combine paramaters, use **`&`**. Example:
+
+```http
+http://vercel-badge.vercel.app/?app=vercel-badge&style=flat-square
+```
+
+## Styles
+
+| `flat` (Default) | `flat-square` | `plastic` |
+| ---------------- | ------------- | --------- |
+| ![Vercel](https://github.com/therealsujitk/vercel-badge/blob/main/public/assets/images/vercel-deployed-flat.svg)  | ![Vercel](https://github.com/therealsujitk/vercel-badge/blob/main/public/assets/images/vercel-deployed-flat-square.svg) | ![Vercel](https://github.com/therealsujitk/vercel-badge/blob/main/public/assets/images/vercel-deployed-plastic.svg) |
+| ![Vercel](https://github.com/therealsujitk/vercel-badge/blob/main/public/assets/images/vercel-failed-flat.svg) | ![Vercel](https://github.com/therealsujitk/vercel-badge/blob/main/public/assets/images/vercel-failed-flat-square.svg) | ![Vercel](https://github.com/therealsujitk/vercel-badge/blob/main/public/assets/images/vercel-failed-plastic.svg)

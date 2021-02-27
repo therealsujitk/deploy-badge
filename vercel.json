@@ -1,0 +1,24 @@
+{
+    "name": "vercel-badge",
+    "version": 2,
+    "builds": [
+        {
+            "src": "*.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "public/assets/images/*",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "handle": "filesystem"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/app.js",
+            "methods": ["GET"]
+        }
+    ]
+}

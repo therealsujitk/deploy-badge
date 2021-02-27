@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="125" height="18">
+   <linearGradient id="b" x2="0" y2="100%">
+      <stop offset="0" stop-color="#fff" stop-opacity=".7"/>
+      <stop offset=".1" stop-color="#aaa" stop-opacity=".1"/>
+      <stop offset=".9" stop-opacity=".3"/>
+      <stop offset="1" stop-opacity=".5"/>
+   </linearGradient>
+   <clipPath id="a">
+      <rect width="125" height="18" rx="4" fill="#fff"/>
+   </clipPath>
+   <g clip-path="url(#a)">
+      <path fill="#555" d="M0 0h66v18H0z"/>
+      <path fill="#4c1" d="M66 0h59v18H66z"/>
+      <path fill="url(#b)" d="M0 0h125v18H0z"/>
+   </g>
+   <g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="110">
+      <image x="5" y="3" width="14" height="14" xlink:href="data:image/png;base64,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"/>
+      <text x="425" y="140" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="390">vercel</text>
+      <text x="425" y="130" transform="scale(.1)" textLength="390">vercel</text>
+      <text x="945" y="140" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="490">deployed</text>
+      <text x="945" y="130" transform="scale(.1)" textLength="490">deployed</text>
+   </g>
+</svg>
+

@@ -1,0 +1,15 @@
+{
+    "name": "vercel-badge",
+    "version": "1.0.0",
+    "description": "Include a Vercel deployment badge in your README.md file.",
+    "main": "bin/server.js",
+    "author": "Sujit Kumar",
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.17.1",
+        "got": "^11.8.2"
+    },
+    "scripts": {
+        "start": "node bin/server.js"
+    }
+}

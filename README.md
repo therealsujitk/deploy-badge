@@ -1,6 +1,6 @@
 # Vercel Badge
 
-![Vercel](http://vercel-badge.vercel.app/?app=vercel-badge) ![License](https://img.shields.io/badge/license-MIT-blue)
+![Vercel](http://therealsujitk-vercel-badge.vercel.app/?app=therealsujitk-vercel-badge) ![License](https://img.shields.io/badge/license-MIT-blue)
 
 Include a [Vercel](http://vercel.com) deployment badge in your `README.md` file.
 
@@ -11,13 +11,13 @@ For the application [`http://therealsujitk.vercel.app`](http://therealsujitk.ver
 ### HTML
 
 ```html
-<img src="https://vercel-badge.vercel.app/?app={VERCEL_APP_NAME}" />
+<img src="https://therealsujitk-vercel-badge.vercel.app/?app={VERCEL_APP_NAME}" />
 ```
 
 ### Markdown
 
 ```markdown
-![Heroku](https://vercel-badge.vercel.app/?app={VERCEL_APP_NAME})
+![Heroku](https://therealsujitk-vercel-badge.vercel.app/?app={VERCEL_APP_NAME})
 ```
 
 ### Other Parameters
@@ -28,7 +28,7 @@ For the application [`http://therealsujitk.vercel.app`](http://therealsujitk.ver
 To combine paramaters, use **`&`**. Example:
 
 ```http
-http://vercel-badge.vercel.app/?app=vercel-badge&style=flat-square
+http://therealsujitk-vercel-badge.vercel.app/?app=vercel-badge&style=flat-square
 ```
 
 ## Styles

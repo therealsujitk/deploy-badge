@@ -28,7 +28,7 @@ For the application [`http://therealsujitk.vercel.app`](http://therealsujitk.ver
 To combine paramaters, use **`&`**. Example:
 
 ```http
-http://therealsujitk-vercel-badge.vercel.app/?app=vercel-badge&style=flat-square
+http://therealsujitk-vercel-badge.vercel.app/?app=therealsujitk-vercel-badge&style=flat-square
 ```
 
 ## Styles

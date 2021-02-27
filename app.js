@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const got = require('got');
 
+app.use(express.static(__dirname + '/public'));
+
 app.get('/*', async (req, res) => {
     var app = "", root = "", style = "flat";
     const query = req.query;

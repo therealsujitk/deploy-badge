@@ -1,6 +1,4 @@
 {
-    "name": "vercel-badge",
-    "version": 2,
     "builds": [
         {
             "src": "*.js",
@@ -12,9 +10,6 @@
         }
     ],
     "routes": [
-        {
-            "handle": "filesystem"
-        },
         {
             "src": "/(.*)",
             "dest": "/app.js",

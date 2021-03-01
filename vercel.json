@@ -3,17 +3,12 @@
         {
             "src": "*.js",
             "use": "@vercel/node"
-        },
-        {
-            "src": "public/assets/images/*",
-            "use": "@vercel/static"
         }
     ],
-    "routes": [
+    "rewrites": [
         {
-            "src": "/(.*)",
-            "dest": "/app.js",
-            "methods": ["GET"]
+            "source": "/(.*)",
+            "destination": "/app.js"
         }
     ]
 }

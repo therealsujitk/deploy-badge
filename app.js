@@ -40,7 +40,7 @@ app.get('/*', (req, res) => {
             status = "failed";
         } else if (statusCode <= 499 && statusCode >= 400) {
             // 400 - 499 -> Client Errors
-            status = "failed";
+            status = "not-found";
         } else if (statusCode <= 399 && statusCode >= 300) {
             // 300 - 399 -> Redirects
         }

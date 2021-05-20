@@ -61,20 +61,20 @@ app.get('/*', (req, res) => {
                 https.get("https://" + url, (response) => {
                     statusCode = response.statusCode;
                     handleRequest(statusCode);
-                }).on('error', (err) => {
+                }).on('error', () => {
                     // The HTTPS page wasn't found
                     handleRequest(statusCode);
                 }); 
             } else {
                 handleRequest(statusCode);
             }
-        }).on('error', (err) => {
-            // For some reason HTTP encountered an error
-            res.status(500).send(err);
+        }).on('error', () => {
+            // Invalid Application Name
+            handleRequest(404);
         });
     } catch {
-        // Invalid Application Name
-        handleRequest(404);
+        // An error was encountered for some unknown reason
+        res.status(500).send('Internal Server Error. Please open an issue at <a href="https://github.com/therealsujitk/vercel-badge/issues">vercel-badge/issues</a>.');
     }
 });
 

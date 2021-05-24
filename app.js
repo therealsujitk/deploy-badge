@@ -28,6 +28,8 @@ app.get('/*', (req, res) => {
             style = "flat-square";
         } else if (query["style"] == "plastic") {
             style = "plastic";
+        } else if (query["style"] == "for-the-badge") {
+            style = "for-the-badge";
         }
     }
 

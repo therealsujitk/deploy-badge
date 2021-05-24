@@ -33,8 +33,8 @@ http://therealsujitk-vercel-badge.vercel.app/?app=therealsujitk-vercel-badge&sty
 
 ## Styles
 
-| `flat` (Default) | `flat-square` | `plastic` |
-| ---------------- | ------------- | --------- |
-| ![Vercel](/public/assets/images/vercel-deployed-flat.svg) | ![Vercel](/public/assets/images/vercel-deployed-flat-square.svg) | ![Vercel](/public/assets/images/vercel-deployed-plastic.svg) |
-| ![Vercel](/public/assets/images/vercel-not-found-flat.svg) | ![Vercel](/public/assets/images/vercel-not-found-flat-square.svg) | ![Vercel](/public/assets/images/vercel-not-found-plastic.svg) |
-| ![Vercel](/public/assets/images/vercel-failed-flat.svg) | ![Vercel](/public/assets/images/vercel-failed-flat-square.svg) | ![Vercel](/public/assets/images/vercel-failed-plastic.svg) |
+| `flat` (Default) | `flat-square` | `plastic` | `for-the-badge` |
+| ---------------- | ------------- | --------- | --------------- |
+| ![Vercel](/public/assets/images/vercel-deployed-flat.svg) | ![Vercel](/public/assets/images/vercel-deployed-flat-square.svg) | ![Vercel](/public/assets/images/vercel-deployed-plastic.svg) | ![Vercel](/public/assets/images/vercel-deployed-for-the-badge.svg) |
+| ![Vercel](/public/assets/images/vercel-not-found-flat.svg) | ![Vercel](/public/assets/images/vercel-not-found-flat-square.svg) | ![Vercel](/public/assets/images/vercel-not-found-plastic.svg) | ![Vercel](/public/assets/images/vercel-not-found-for-the-badge.svg) |
+| ![Vercel](/public/assets/images/vercel-failed-flat.svg) | ![Vercel](/public/assets/images/vercel-failed-flat-square.svg) | ![Vercel](/public/assets/images/vercel-failed-plastic.svg) | ![Vercel](/public/assets/images/vercel-failed-for-the-badge.svg) |

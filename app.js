@@ -54,25 +54,18 @@ app.get('/*', (req, res) => {
     }
 
     try {
-        http.get("http://" + url, (response) => {
+        https.get("https://" + url, (response) => {
             var statusCode = response.statusCode;
-
-            // 308 -> Permanent Redirect
-            // This could mean HTTP is being redirected to HTTPS
-            if (statusCode == 308) {
-                https.get("https://" + url, (response) => {
-                    statusCode = response.statusCode;
-                    handleRequest(statusCode);
-                }).on('error', () => {
-                    // The HTTPS page wasn't found
-                    handleRequest(statusCode);
-                }); 
-            } else {
-                handleRequest(statusCode);
-            }
+            handleRequest(statusCode);
         }).on('error', () => {
-            // Invalid Application Name
-            handleRequest(404);
+            // This could mean the HTTPS site is not available so we check for HTTP
+            http.get("http://" + url, (response) => {
+                var statusCode = response.statusCode;
+                handleRequest(statusCode);
+            }).on('error', () => {
+                // Invalid Application Name
+                handleRequest(404);
+            }); 
         });
     } catch {
         // An error was encountered for some unknown reason

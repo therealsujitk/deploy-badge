@@ -6,7 +6,7 @@ const https = require('https');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/*', (req, res) => {
-    var app = "", root = "", style = "flat";
+    var app = "", root = "", style = "flat", logo_path = "logo";
     const query = req.query;
 
     // The Vercel application name
@@ -20,6 +20,11 @@ app.get('/*', (req, res) => {
     // The application path
     if ("root" in query) {
         root = query["root"];
+    }
+
+    // To Logo or No to logo, that is the question - DeltaRager 2021
+    if ("logo" in query && query["logo"] == "false"){
+        logo_path = "no-logo"
     }
 
     // The style of the badge
@@ -50,7 +55,7 @@ app.get('/*', (req, res) => {
         // 200 - 299 -> Successful Responses
         // 100 - 199 -> Informational Responses
     
-        res.status(200).sendFile(__dirname + "/public/assets/images/vercel-" + status + "-" + style + ".svg");
+        res.status(200).sendFile(`${__dirname}/public/assets/images/${logo_path}/vercel-${status}-${style}.svg`);
     }
 
     try {

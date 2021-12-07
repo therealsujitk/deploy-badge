@@ -22,17 +22,17 @@ For the application [`http://therealsujitk.vercel.app`](http://therealsujitk.ver
 
 ### Other Parameters
 
-- **`?style=`** - The style of the badge. Available styles: **`flat`** (Default), **`flat-square`** & **`plastic`**.
+- **`?style=`** - The style of the badge. Available styles: **`flat`** (Default), **`flat-square`**, **`plastic`** & **`for-the-badge`**.
 - **`?root=`** - Use this paramater if you'd like to check the deployment of a different path. Example: To check the deployment of [`http://therealsujitk.vercel.app/projects/vercel-badge`](http://therealsujitk.vercel.app/projects/vercel-badge), specify root as `projects/vercel-badge`.
 - **`?logo=`** - Use this paramater if you'd like to disable the vercel logo on the badge. Available values: **`true`** (Default), **`false`**.
 
 
 To combine paramaters, use **`&`**. Example:
 
-![Vercel](http://therealsujitk-vercel-badge.vercel.app/?app=therealsujitk-vercel-badge&style=flat-square&logo=false)
+![Vercel](http://therealsujitk-vercel-badge.vercel.app/?app=therealsujitk-vercel-badge&style=for-the-badge&logo=false)
 
 ```http
-http://therealsujitk-vercel-badge.vercel.app/?app=therealsujitk-vercel-badge&style=flat-square&logo=false
+http://therealsujitk-vercel-badge.vercel.app/?app=therealsujitk-vercel-badge&style=for-the-badge&logo=false
 ```
 
 ## Styles

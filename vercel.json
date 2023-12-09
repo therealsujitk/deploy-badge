@@ -1,14 +1,14 @@
 {
-    "builds": [
-        {
-            "src": "*.js",
-            "use": "@vercel/node"
-        }
-    ],
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "/app.js"
-        }
-    ]
+  "builds": [
+    {
+      "src": "dist/bin/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "dist/bin/server.js"
+    }
+  ]
 }

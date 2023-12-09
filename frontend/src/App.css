@@ -1,0 +1,17 @@
+.App {
+  max-width: 600px;
+  margin: auto;
+  padding: 30px;
+}
+
+footer ul {
+  padding-inline-start: 0;
+}
+
+footer ul li {
+  display: inline;
+}
+
+footer a {
+  text-decoration: none;
+}

@@ -7,6 +7,6 @@ const port = process.env.PORT || 3000;
 /*
   Starting the listener
  */
-  httpServer.listen(port, () => {
+httpServer.listen(port, () => {
   console.log('listening on *:' + port);
 });

@@ -2,7 +2,7 @@
 
 ![Vercel](http://therealsujitk-vercel-badge.vercel.app/?app=therealsujitk-vercel-badge) ![License](https://img.shields.io/badge/license-MIT-blue)
 
-Include a [Vercel](http://vercel.com) deployment badge in your `README.md` file. Visit the [home page](http://therealsujitk-vercel-badge.vercel.app) to generate a badge for your Vercel project.
+Include a [Vercel](http://vercel.com) deployment badge in your project's `README.md` file. Visit the [home page](http://therealsujitk-vercel-badge.vercel.app) to generate a badge for your Vercel project.
 
 ## Usage
 
@@ -33,7 +33,7 @@ To combine paramaters, use **`&`**. Example:
 ![Vercel](http://therealsujitk-vercel-badge.vercel.app/?app=therealsujitk-vercel-badge&style=for-the-badge&logo=none)
 
 ```
-http://therealsujitk-vercel-badge.vercel.app/?app=therealsujitk-vercel-badge&style=for-the-badge&logo=false
+http://therealsujitk-vercel-badge.vercel.app/?app=therealsujitk-vercel-badge&style=for-the-badge&logo=none
 ```
 
 ### Links

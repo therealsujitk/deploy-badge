@@ -28,6 +28,12 @@ function App() {
     `<img src="${badgeUrl}" alt="Vercel Deploy"></img>`,
   ];
 
+  const footerLinks: {[x: string]: string} = {
+    'GitHub': 'https://github.com/therealsujitk/vercel-badge',
+    'About Me': 'https://therealsuji.tk',
+    'Donate': 'https://therealsuji.tk/donate',
+  };
+
   return (
     <CssVarsProvider defaultMode="dark">
       <CssBaseline />
@@ -62,22 +68,16 @@ function App() {
               <span style={{alignSelf: 'center'}}>Badge Preview</span><img src={outputs[0]} alt="Badge Preview" style={{alignSelf: 'center'}} />
             </div>
           </Card>
-          {outputs.map(o => <Input variant="outlined" sx={{mt: 1.5, p: 2}} value={o} readOnly endDecorator={<Button sx={{mr: 0.5}} onClick={() => navigator.clipboard.writeText(o)}>Copy</Button>} />)}
+          {outputs.map((o, i) => <Input key={i} variant="outlined" sx={{mt: 1.5, p: 2}} value={o} readOnly endDecorator={<Button sx={{mr: 0.5}} onClick={() => navigator.clipboard.writeText(o)}>Copy</Button>} />)}
         </section>
 
         <Divider sx={{mt: 1.5, mb: 1.5}} orientation="horizontal" />
 
         <footer>
           <ul style={{display: 'flex', gap: '15px', justifyContent: 'center'}}>
-            <li>
-              <a href="https://github.com/therealsujitk/vercel-badge"><Typography level="body-xs">GitHub</Typography></a>
-            </li>
-            <li>
-              <a href="https://therealsuji.tk"><Typography level="body-xs">About Me</Typography></a>
-            </li>
-            <li>
-              <a href="https://therealsuji.tk/donate"><Typography level="body-xs">Donate</Typography></a>
-            </li>
+            {Object.keys(footerLinks).map((key, i) => (<li key={i}>
+              <a href={footerLinks[key]}><Typography level="body-xs">{key}</Typography></a>
+            </li>))}
           </ul>
         </footer>
       </div>

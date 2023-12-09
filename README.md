@@ -36,7 +36,7 @@ To combine paramaters, use **`&`**. Example:
 http://therealsujitk-vercel-badge.vercel.app/?app=therealsujitk-vercel-badge&style=for-the-badge&logo=none
 ```
 
-### Links
+## Links
 
 - [Badge Generator](https://therealsujitk-vercel-badge.vercel.app)
 - [About Me](https://therealsuji.tk)

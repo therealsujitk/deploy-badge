@@ -1,7 +1,7 @@
 .App {
-  max-width: 600px;
+  max-width: 750px;
   margin: auto;
-  padding: 30px;
+  padding: 70px;
 }
 
 footer ul {
@@ -14,4 +14,16 @@ footer ul li {
 
 footer a {
   text-decoration: none;
+}
+
+@media screen and (max-width: 992px) {
+  .App {
+    padding: 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .App {
+    padding: 30px;
+  }
 }

@@ -50,9 +50,9 @@ function App() {
       <CssBaseline />
       <div className='App'>
         <header>
-          <Box sx={{display: 'flex', alignItems: 'center', gap: 1.5}}>
+          <Box sx={{display: 'flex', alignItems: 'center', gap: 1.5, mb: 3}}>
             <svg width="45" height="40" viewBox="0 0 50 42.763" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m24.689 0 24.689 42.763H0L24.689 0Z" fill="#fff"/></svg>
-            <h1>Vercel Badge</h1>
+            <Typography level="h1">Vercel Badge</Typography>
           </Box>
         </header>
         

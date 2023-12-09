@@ -21,7 +21,7 @@ const app = (0, express_1.default)();
 const cache = new node_cache_1.default();
 function createBadge(badge) {
     return __awaiter(this, void 0, void 0, function* () {
-        badge.value = badge.value.replace(/-/g, '--');
+        badge.value = badge.value.replace(/-/g, '--').replace(/_/g, '__');
         const url = new URL(`http://img.shields.io/badge/${badge.key}-${badge.value}-${badge.color}?style=${badge.style}&logo=${badge.logo}`);
         if (cache.has(url.toString())) {
             return cache.get(url.toString());
@@ -31,7 +31,9 @@ function createBadge(badge) {
         return response;
     });
 }
-app.use(express_1.default.static(__dirname + '/frontend/build', { index: false }));
+app.use(express_1.default.static(__dirname + '/frontend/build', {
+    index: false
+}));
 app.get('/*', (req, res) => {
     var _a, _b, _c, _d;
     if (!("app" in req.query)) {

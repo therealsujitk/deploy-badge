@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import './App.css';
 import { Box, Button, Card, CssBaseline, CssVarsProvider, Divider, Input, Option, Select, Typography } from '@mui/joy';
 
@@ -14,13 +14,24 @@ function App() {
     'flat-square': 'Flat Square',
     'for-the-badge': 'For The Badge',
   };
+  
+  const badgeUrl = useMemo(() => {
+    const url = new URL(window.location.origin);
+    url.searchParams.append('app', appName);
+    if (appPath !== '') url.searchParams.append('root', appPath);
+    if (badgeStyle !== 'flat') url.searchParams.append('style', badgeStyle);
+    if (logo !== 'vercel') url.searchParams.append('logo', logo);
+    if (badgeName !== 'vercel') url.searchParams.append('name', badgeName);
 
-  const badgeUrl = new URL(window.location.origin);
-  badgeUrl.searchParams.append('app', appName);
-  if (appPath !== '') badgeUrl.searchParams.append('root', appPath);
-  if (badgeStyle !== 'flat') badgeUrl.searchParams.append('style', badgeStyle);
-  if (logo !== 'vercel') badgeUrl.searchParams.append('logo', logo);
-  if (badgeName !== 'vercel') badgeUrl.searchParams.append('name', badgeName);
+    return url;
+  }, [appName, appPath, badgeStyle, logo, badgeName]);
+
+  const [badgePreview, setBadgePreview] = useState<string>(badgeUrl.toString());
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setBadgePreview(badgeUrl.toString()), 500);
+    return () => clearTimeout(timeout);
+  }, [badgeUrl]);
 
   const outputs = [
     badgeUrl.toString(),
@@ -65,7 +76,7 @@ function App() {
         <section>
           <Card>
             <div style={{display: 'flex', justifyContent: 'space-between'}}>
-              <span style={{alignSelf: 'center'}}>Badge Preview</span><img src={outputs[0]} alt="Badge Preview" style={{alignSelf: 'center'}} />
+              <span style={{alignSelf: 'center'}}>Badge Preview</span><img src={badgePreview} alt="Badge Preview" style={{alignSelf: 'center'}} />
             </div>
           </Card>
           {outputs.map((o, i) => <Input key={i} variant="outlined" sx={{mt: 1.5, p: 2}} value={o} readOnly endDecorator={<Button sx={{mr: 0.5}} onClick={() => navigator.clipboard.writeText(o)}>Copy</Button>} />)}

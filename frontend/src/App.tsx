@@ -12,6 +12,7 @@ function App() {
   const badgeStyles: {[x: string]: string} = {
     'flat': 'Flat',
     'flat-square': 'Flat Square',
+    'plastic': 'Plastic',
     'for-the-badge': 'For The Badge',
   };
   

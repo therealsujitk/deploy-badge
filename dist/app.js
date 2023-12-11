@@ -13,10 +13,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const got_1 = __importDefault(require("got"));
-const http_1 = __importDefault(require("http"));
-const https_1 = __importDefault(require("https"));
 const node_cache_1 = __importDefault(require("node-cache"));
+const node_fetch_1 = __importDefault(require("node-fetch"));
 const app = (0, express_1.default)();
 const cache = new node_cache_1.default();
 function createBadge(badge) {
@@ -26,15 +24,14 @@ function createBadge(badge) {
         if (cache.has(url.toString())) {
             return cache.get(url.toString());
         }
-        const response = (yield (0, got_1.default)(url)).body;
-        cache.set(url.toString(), response);
-        return response;
+        const response = yield (0, node_fetch_1.default)(url);
+        const body = yield response.text();
+        cache.set(url.toString(), body);
+        return body;
     });
 }
-app.use(express_1.default.static(__dirname + '/frontend/build', {
-    index: false
-}));
-app.get('/*', (req, res) => {
+app.use(express_1.default.static(__dirname + '/frontend/build', { index: false }));
+app.get('/*', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a, _b, _c, _d;
     if (!("app" in req.query)) {
         return res.status(200).sendFile(__dirname + '/frontend/build/index.html');
@@ -63,24 +60,12 @@ app.get('/*', (req, res) => {
         }
         else if (statusCode <= 399 && statusCode >= 300) {
         }
-        res.setHeader('Content-type', 'image/svg+xml');
-        res.status(200).send(yield createBadge(badge));
+        createBadge(badge)
+            .then(badge => res.setHeader('Content-type', 'image/svg+xml').status(200).send(badge))
+            .catch(_ => res.status(500).send('Internal Server Error. Please open an issue at <a href="https://github.com/therealsujitk/vercel-badge/issues">vercel-badge/issues</a>.'));
     });
-    try {
-        https_1.default.get("https://" + url, (response) => __awaiter(void 0, void 0, void 0, function* () {
-            var statusCode = response.statusCode;
-            yield handleRequest(statusCode);
-        })).on('error', () => {
-            http_1.default.get("http://" + url, (response) => __awaiter(void 0, void 0, void 0, function* () {
-                var statusCode = response.statusCode;
-                yield handleRequest(statusCode);
-            })).on('error', () => {
-                handleRequest(404);
-            });
-        });
-    }
-    catch (_e) {
-        res.status(500).send('Internal Server Error. Please open an issue at <a href="https://github.com/therealsujitk/vercel-badge/issues">vercel-badge/issues</a>.');
-    }
-});
+    (0, node_fetch_1.default)(`http://${url}`)
+        .then(response => handleRequest(response.status))
+        .catch(_ => handleRequest());
+}));
 exports.default = app;

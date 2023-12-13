@@ -6,8 +6,8 @@ function App() {
   const [appName, setAppName] = useState('therealsujitk');
   const [appPath, setAppPath] = useState('');
   const [badgeStyle, setBadgeStyle] = useState('flat');
-  const [logo, setLogo] = useState('vercel');
-  const [badgeName, setBadgeName] = useState('vercel');
+  const [badgeLogo, setBadgeLogo] = useState('vercel');
+  const [badgeLabel, setBadgeLabel] = useState('vercel');
 
   const badgeStyles: {[x: string]: string} = {
     'flat': 'Flat',
@@ -21,11 +21,11 @@ function App() {
     url.searchParams.append('app', appName);
     if (appPath !== '') url.searchParams.append('root', appPath);
     if (badgeStyle !== 'flat') url.searchParams.append('style', badgeStyle);
-    if (logo !== 'vercel') url.searchParams.append('logo', logo);
-    if (badgeName !== 'vercel') url.searchParams.append('name', badgeName);
+    if (badgeLogo !== 'vercel') url.searchParams.append('logo', badgeLogo);
+    if (badgeLabel !== 'vercel') url.searchParams.append('label', badgeLabel);
 
     return url;
-  }, [appName, appPath, badgeStyle, logo, badgeName]);
+  }, [appName, appPath, badgeStyle, badgeLogo, badgeLabel]);
 
   const [badgePreview, setBadgePreview] = useState<string>(badgeUrl.toString());
 
@@ -37,7 +37,7 @@ function App() {
   const outputs = [
     badgeUrl.toString(),
     `![Vercel Deploy](${badgeUrl})`,
-    `<img src="${badgeUrl}" alt="Vercel Deploy"></img>`,
+    `<img src="${badgeUrl}" alt="Vercel Deploy">`,
   ];
 
   const footerLinks: {[x: string]: string} = {
@@ -67,8 +67,8 @@ function App() {
             <Select variant="soft" value={badgeStyle} sx={{flex: 1}} onChange={(_, v) => setBadgeStyle(v as string)}>
               {Object.keys(badgeStyles).map((key, i) => <Option key={i} value={key}>{badgeStyles[key]}</Option>)}
             </Select>
-            <Input variant="soft" value={logo} sx={{flex: 1}} onChange={(e) => setLogo(e.target.value)} />
-            <Input variant="soft" value={badgeName} sx={{flex: 1}} onChange={(e) => setBadgeName(e.target.value)} />
+            <Input variant="soft" value={badgeLogo} sx={{flex: 1}} placeholder="Badge Logo" onChange={(e) => setBadgeLogo(e.target.value)} />
+            <Input variant="soft" value={badgeLabel} sx={{flex: 1}} placeholder="Badge Label" onChange={(e) => setBadgeLabel(e.target.value)} />
           </Box>
         </section>
 

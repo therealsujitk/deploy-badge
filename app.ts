@@ -6,16 +6,18 @@ const app = express();
 const cache = new NodeCache();
 
 interface Badge {
-  key: string,
-  value: string,
+  label: string,
+  message: string,
   color: string,
   style: string,
   logo: string,
 }
 
 async function createBadge(badge: Badge) {
-  badge.value = badge.value.replace(/-/g, '--').replace(/_/g, '__');
-  const url = new URL(`http://img.shields.io/badge/${badge.key}-${badge.value}-${badge.color}?style=${badge.style}&logo=${badge.logo}`);
+  const url = new URL(`http://img.shields.io/badge/label-${badge.message}-${badge.color}`);
+  url.searchParams.append('style', badge.style);
+  url.searchParams.append('logo', badge.logo);
+  url.searchParams.append('label', badge.label);
 
   if (cache.has(url.toString())) {
     return cache.get(url.toString()) as string;
@@ -37,14 +39,14 @@ app.get('/*', async (req, res) => {
   const appName = req.query.app;
   const root = req.query.root ?? '';
   const style = req.query.style ?? 'flat';
-  const badgeName = req.query.name ?? 'vercel'
+  const label = req.query.label ?? req.query.name ?? 'vercel'
   const logo = req.query.logo ?? 'vercel';
 
   const url = appName + '.vercel.app/' + root;
   const handleRequest = async (statusCode: number = 404) => {
     const badge: Badge = {
-      key: (badgeName as string).replace(/-/g, '--').replace(/_/g, '__'),
-      value: 'deployed',
+      label: label as string,
+      message: 'deployed',
       color: 'brightgreen',
       style: style as string,
       logo: logo as string,
@@ -52,11 +54,11 @@ app.get('/*', async (req, res) => {
 
     if (statusCode <= 599 && statusCode >= 500) {
       // 500 - 599 -> Server Errors
-      badge.value = 'failed';
+      badge.message = 'failed';
       badge.color = 'red';
     } else if (statusCode <= 499 && statusCode >= 400) {
       // 400 - 499 -> Client Errors
-      badge.value = 'not-found';
+      badge.message = 'not found';
       badge.color = 'lightgrey';
     } else if (statusCode <= 399 && statusCode >= 300) {
       // 300 - 399 -> Redirects

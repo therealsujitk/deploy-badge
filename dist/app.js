@@ -19,8 +19,10 @@ const app = (0, express_1.default)();
 const cache = new node_cache_1.default();
 function createBadge(badge) {
     return __awaiter(this, void 0, void 0, function* () {
-        badge.value = badge.value.replace(/-/g, '--').replace(/_/g, '__');
-        const url = new URL(`http://img.shields.io/badge/${badge.key}-${badge.value}-${badge.color}?style=${badge.style}&logo=${badge.logo}`);
+        const url = new URL(`http://img.shields.io/badge/label-${badge.message}-${badge.color}`);
+        url.searchParams.append('style', badge.style);
+        url.searchParams.append('logo', badge.logo);
+        url.searchParams.append('label', badge.label);
         if (cache.has(url.toString())) {
             return cache.get(url.toString());
         }
@@ -32,30 +34,30 @@ function createBadge(badge) {
 }
 app.use(express_1.default.static(__dirname + '/frontend/build', { index: false }));
 app.get('/*', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    var _a, _b, _c, _d;
+    var _a, _b, _c, _d, _e;
     if (!("app" in req.query)) {
         return res.status(200).sendFile(__dirname + '/frontend/build/index.html');
     }
     const appName = req.query.app;
     const root = (_a = req.query.root) !== null && _a !== void 0 ? _a : '';
     const style = (_b = req.query.style) !== null && _b !== void 0 ? _b : 'flat';
-    const badgeName = (_c = req.query.name) !== null && _c !== void 0 ? _c : 'vercel';
-    const logo = (_d = req.query.logo) !== null && _d !== void 0 ? _d : 'vercel';
+    const label = (_d = (_c = req.query.label) !== null && _c !== void 0 ? _c : req.query.name) !== null && _d !== void 0 ? _d : 'vercel';
+    const logo = (_e = req.query.logo) !== null && _e !== void 0 ? _e : 'vercel';
     const url = appName + '.vercel.app/' + root;
     const handleRequest = (statusCode = 404) => __awaiter(void 0, void 0, void 0, function* () {
         const badge = {
-            key: badgeName.replace(/-/g, '--').replace(/_/g, '__'),
-            value: 'deployed',
+            label: label,
+            message: 'deployed',
             color: 'brightgreen',
             style: style,
             logo: logo,
         };
         if (statusCode <= 599 && statusCode >= 500) {
-            badge.value = 'failed';
+            badge.message = 'failed';
             badge.color = 'red';
         }
         else if (statusCode <= 499 && statusCode >= 400) {
-            badge.value = 'not-found';
+            badge.message = 'not found';
             badge.color = 'lightgrey';
         }
         else if (statusCode <= 399 && statusCode >= 300) {

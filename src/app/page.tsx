@@ -1,6 +1,8 @@
 import { ServiceButton } from "../components";
 import { Grid, Typography } from "@mui/joy";
 import customLogo from './custom/logo.svg';
+import herokuLogo from './heroku/logo.svg';
+import netlifyLogo from './netlify/logo.svg';
 import vercelLogo from './vercel/logo.svg';
 
 export default function Home() {
@@ -9,6 +11,11 @@ export default function Home() {
       title: 'Vercel',
       logo: vercelLogo,
       href: '/vercel'
+    },
+    {
+      title: 'Netlify',
+      logo: netlifyLogo,
+      href: '/netlify'
     },
     {
       title: 'Custom',

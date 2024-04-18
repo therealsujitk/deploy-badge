@@ -1,6 +1,9 @@
 # Vercel Badge
 
-![Vercel](http://therealsujitk-vercel-badge.vercel.app/?app=therealsujitk-vercel-badge) ![License](https://img.shields.io/badge/license-MIT-blue)
+![Vercel Deploy](https://deploy-badge.vercel.app/vercel?url=https://therealsujitk-vercel-badge.vercel.app/) ![License](https://img.shields.io/badge/license-MIT-blue)
+
+> [!CAUTION]
+> This application has been replaced by [therealsujitk/deploy-badge](https://github.com/therealsujitk/deploy-badge) and will be taken down soon. Kindly update your badge links to use the new application.
 
 Include a [Vercel](http://vercel.com) deployment badge in your project's `README.md` file. Visit the [home page](http://therealsujitk-vercel-badge.vercel.app) to generate a badge for your Vercel project.
 

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Box, Divider } from '@mui/joy';
 import { BadgeOptions, Header, InputField, Outputs } from '../../components';
 import logo from './logo.svg';
+import { getBaseUrl } from '@/helpers/utils';
 
 function Custom() {
   const [baseUrl, setBaseUrl] = useState('www.nextjs.org');
@@ -15,7 +16,7 @@ function Custom() {
   useEffect(() => {document.title = 'Vercel | Custom Badge'});
   
   const badgeUrl = useMemo(() => {
-    const url = new URL(window.location.origin);
+    const url = new URL(getBaseUrl());
     const protocol = baseUrl.startsWith('http') ? '' : 'http://'
     url.searchParams.append('url', `${protocol}${baseUrl}/${appPath}`);
     if (badgeStyle !== 'flat') url.searchParams.append('style', badgeStyle);

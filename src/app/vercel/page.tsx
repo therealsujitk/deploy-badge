@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Box, Divider } from '@mui/joy';
 import { BadgeOptions, Header, InputField, Outputs } from '../../components';
 import logo from './logo.svg';
+import { getBaseUrl } from '@/helpers/utils';
 
 function Vercel() {
   const [appName, setAppName] = useState('deploy-badge');
@@ -16,7 +17,7 @@ function Vercel() {
   useEffect(() => {document.title = 'Vercel | Deploy Badge'});
   
   const badgeUrl = useMemo(() => {
-    const url = new URL(window.location.origin + '/vercel');
+    const url = new URL(getBaseUrl() + '/vercel');
     url.searchParams.append('url', `https://${appName}.vercel.app/${appPath}`);
     if (badgeStyle !== 'flat') url.searchParams.append('style', badgeStyle);
     if (badgeLogo !== 'vercel') url.searchParams.append('logo', badgeLogo);

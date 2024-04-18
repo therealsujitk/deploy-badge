@@ -5,6 +5,7 @@ function BadgePreview(props: { src?: string }) {
     <Card>
       <div style={{display: 'flex', justifyContent: 'space-between'}}>
         <span style={{alignSelf: 'center'}}>Badge Preview</span>
+        {/* eslint-disable @next/next/no-img-element */}
         <img src={props.src} alt="Badge Preview" style={{alignSelf: 'center'}} />
       </div>
     </Card>

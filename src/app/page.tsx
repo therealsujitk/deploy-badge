@@ -38,7 +38,7 @@ export default function Home() {
         </Typography>
       </header>
 
-      <Typography mb={3}>Generate a deployment badge for your project's README</Typography>
+      <Typography mb={3}>Generate a deployment badge for your project&apos;s README</Typography>
 
       <Grid container spacing={1.5} columns={2}>
         {services.map((service, i) => <Grid key={i} xs={1}><ServiceButton {...service} /></Grid>)}

@@ -17,4 +17,5 @@ async function createBadge(badge: Badge) {
   return body;
 }
 
-export default { createBadge };
+const ShieldsIO = { createBadge };
+export default ShieldsIO;

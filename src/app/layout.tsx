@@ -22,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="https://fav.farm/🚀" sizes="any" />
+        {/* eslint-disable @next/next/no-page-custom-font */}
         <link href="https://fonts.googleapis.com/css2?family=Rubik&amp;display=swap" rel="stylesheet"></link>
       </head>
       <body>

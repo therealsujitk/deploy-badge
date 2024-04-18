@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Box, Divider } from '@mui/joy';
 import { BadgeOptions, Header, InputField, Outputs } from '../../components';
 import logo from './logo.svg';
+import { getBaseUrl } from '@/helpers/utils';
 
 function Vercel() {
   const [appName, setAppName] = useState('socketio-chat-h9jt');
@@ -16,7 +17,7 @@ function Vercel() {
   useEffect(() => {document.title = 'Heroku | Deploy Badge'});
   
   const badgeUrl = useMemo(() => {
-    const url = new URL(window.location.origin + '/heroku');
+    const url = new URL(getBaseUrl() + '/heroku');
     url.searchParams.append('url', `https://${appName}.herokuapp.com/${appPath}`);
     if (badgeStyle !== 'flat') url.searchParams.append('style', badgeStyle);
     if (badgeLogo !== 'heroku') url.searchParams.append('logo', badgeLogo);

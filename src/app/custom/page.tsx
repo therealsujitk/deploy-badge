@@ -13,7 +13,7 @@ function Custom() {
   const [badgeLogo, setBadgeLogo] = useState('');
   const [badgeName, setBadgeName] = useState('website');
   
-  useEffect(() => {document.title = 'Vercel | Custom Badge'});
+  useEffect(() => {document.title = 'Custom | Deploy Badge'});
   
   const badgeUrl = useMemo(() => {
     const url = new URL(getBaseUrl());

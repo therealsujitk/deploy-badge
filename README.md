@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Deploy Badge
 
-## Getting Started
+![Vercel Badge](https://deploy-badge.vercel.app/vercel?url=https://deploy-badge.vercel.app) ![License](https://img.shields.io/badge/license-MIT-blue)
 
-First, run the development server:
+Generate a deployment badge for your project's README.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Usage
+
+It's recommended to use the [badge generator](https://deploy-badge.vercel.app) to quickly generate a badge for your application. Here's how you can create a custom deployment badge.
+
+To generate a deployment badge for your application [https://www.nextjs.org](https://www.nextjs.org), simply pass this URL as a parameter to this application.
+
+### HTML
+
+```html
+<img src="https://deploy-badge.vercel.app/?url=http://www.nextjs.org/&name=website" alt="Website Deploy"></img>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Markdown
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```md
+![Website Deploy](https://deploy-badge.vercel.app/?url=http://www.nextjs.org/&name=website)
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Other Parameters
 
-## Learn More
+- **`?style=`** - The style of the badge. Available styles: **`flat`** (Default), **`flat-square`**, **`plastic`** & **`for-the-badge`**.
+- **`?logo=`** - Use this paramater if you'd like to change the vercel logo on the badge. To learn more visit [the Shields.io documentation](https://shields.io/docs/logos).
+- **`?name=`** - Use this parameter if you'd like to change the name of the badge.
 
-To learn more about Next.js, take a look at the following resources:
+## Links
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Generate a Badge](https://deploy-badge.vercel.app)
+- [About Me](https://therealsuji.tk)
+- [Donate](https://therealsuji.tk/donate)

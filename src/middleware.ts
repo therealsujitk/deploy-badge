@@ -13,6 +13,10 @@ export async function middleware(request: NextRequest) {
   const defaults: {badgeName?: string, badgeLogo?: string} = {};
 
   switch (requestUrl.pathname) {
+    case '/heroku':
+      defaults.badgeName = 'heroku';
+      defaults.badgeLogo = 'heroku';
+      break;
     case '/vercel':
       defaults.badgeName = 'vercel';
       defaults.badgeLogo = 'vercel';

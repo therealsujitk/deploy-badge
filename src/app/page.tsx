@@ -18,6 +18,11 @@ export default function Home() {
       href: '/netlify'
     },
     {
+      title: 'Heroku',
+      logo: herokuLogo,
+      href: '/heroku'
+    },
+    {
       title: 'Custom',
       logo: customLogo,
       href: '/custom'

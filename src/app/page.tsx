@@ -1,5 +1,6 @@
 import { ServiceButton } from "../components";
 import { Grid, Typography } from "@mui/joy";
+import customLogo from './custom/logo.svg';
 import vercelLogo from './vercel/logo.svg';
 
 export default function Home() {
@@ -8,7 +9,12 @@ export default function Home() {
       title: 'Vercel',
       logo: vercelLogo,
       href: '/vercel'
-    }
+    },
+    {
+      title: 'Custom',
+      logo: customLogo,
+      href: '/custom'
+    },
   ];
   
   return (

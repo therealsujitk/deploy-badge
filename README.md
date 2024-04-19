@@ -1,12 +1,12 @@
 # Deploy Badge
 
-![Vercel Badge](https://deploy-badge.vercel.app/vercel?url=https://deploy-badge.vercel.app) ![License](https://img.shields.io/badge/license-MIT-blue)
+![Vercel Badge](https://deploy-badge.vercel.app/vercel/deploy-badge) ![License](https://img.shields.io/badge/license-MIT-blue)
 
 Generate a deployment badge for your project's README.
 
 ## Usage
 
-It's recommended to use the [badge generator](https://deploy-badge.vercel.app) to quickly generate a badge for your application. Here's how you can create a custom deployment badge.
+It's recommended to use the [badge generator](https://deploy-badge.vercel.app) to quickly generate a badge for your application. Here's how you can create a deployment badge for any URL.
 
 To generate a deployment badge for your application [https://www.nextjs.org](https://www.nextjs.org), simply pass this URL as a parameter to this application.
 

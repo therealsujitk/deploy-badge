@@ -5,6 +5,18 @@ import { CssBaseline, CssVarsProvider, Divider, Typography } from "@mui/joy";
 export const metadata: Metadata = {
   title: "Deploy Badge",
   description: "Generate a deployment badge for your project's README",
+  applicationName: "Deploy Badge",
+  authors: {
+    name: 'Sujit Kumar',
+    url: 'https://therealsuji.tk'
+  },
+  openGraph: {
+    title: "Deploy Badge",
+    description: "Generate a deployment badge for your project's README",
+    images: "https://deploy-badge.vercel.app/logo.png",
+    type: "website",
+    url: "https://deploy-badge.vercel.app"
+  }
 };
 
 export default function RootLayout({

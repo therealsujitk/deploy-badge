@@ -18,7 +18,6 @@ function Netlify() {
     if (badgeStyle !== 'flat') url.searchParams.append('style', badgeStyle);
     if (badgeLogo !== '') url.searchParams.append('logo', badgeLogo);
     if (badgeName !== 'netlify') url.searchParams.append('label', badgeName);
-    url.search = decodeURIComponent(url.search);
 
     return url;
   }, [projectId, badgeStyle, badgeLogo, badgeName]);

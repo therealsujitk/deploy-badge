@@ -17,12 +17,11 @@ function Vercel() {
   useEffect(() => {document.title = 'Heroku | Deploy Badge'});
   
   const badgeUrl = useMemo(() => {
-    const url = new URL(getBaseUrl() + '/heroku');
-    url.searchParams.append('url', `https://${appName}.herokuapp.com/${appPath}`);
+    const url = new URL(getBaseUrl() + '/heroku/' + appName);
+    if (appPath !== '') url.searchParams.append('root', appPath);
     if (badgeStyle !== 'flat') url.searchParams.append('style', badgeStyle);
     if (badgeLogo !== 'heroku') url.searchParams.append('logo', badgeLogo);
     if (badgeName !== 'heroku') url.searchParams.append('name', badgeName);
-    url.search = decodeURIComponent(url.search);
 
     return url;
   }, [appName, appPath, badgeStyle, badgeLogo, badgeName]);

@@ -7,7 +7,7 @@ import logo from './logo.svg';
 import { getBaseUrl } from '@/helpers/utils';
 
 function Vercel() {
-  const [appName, setAppName] = useState('deploy-badge');
+  const [appName, setAppName] = useState('reactions-demo');
   const [appPath, setAppPath] = useState('');
   const [badgeStyle, setBadgeStyle] = useState('flat');
   const [badgeLogo, setBadgeLogo] = useState('vercel');
@@ -17,12 +17,11 @@ function Vercel() {
   useEffect(() => {document.title = 'Vercel | Deploy Badge'});
   
   const badgeUrl = useMemo(() => {
-    const url = new URL(getBaseUrl() + '/vercel');
-    url.searchParams.append('url', `https://${appName}.vercel.app/${appPath}`);
+    const url = new URL(getBaseUrl() + '/vercel/' + appName);
+    if (appPath !== '') url.searchParams.append('root', appPath);
     if (badgeStyle !== 'flat') url.searchParams.append('style', badgeStyle);
     if (badgeLogo !== 'vercel') url.searchParams.append('logo', badgeLogo);
     if (badgeName !== 'vercel') url.searchParams.append('name', badgeName);
-    url.search = decodeURIComponent(url.search);
 
     return url;
   }, [appName, appPath, badgeStyle, badgeLogo, badgeName]);
